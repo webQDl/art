@@ -5,6 +5,9 @@ import About from '../views/About.vue'
 import My from '../views/My.vue'
 import PhoneLogin from '../views/PhoneLogin.vue'
 import ForgetPwd from '../views/ForgetPwd.vue'
+import News from '../views/News.vue'
+import Community from '../views/Community.vue'
+import CommunityCommunication from '../views/CommunityCommunication.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +50,30 @@ const routes = [
     component: ForgetPwd,
     meta: {
       TabbarShow: false
+    }
+  },
+  {
+    path: '/news',
+    name: 'News',
+    component: News,
+    meta: {
+      TabbarShow: true
+    }
+  },
+  {
+    path: '/community',
+    name: 'Community',
+    component: Community,
+    meta: {
+      TabbarShow: true
+    }
+  },
+  {
+    path: '/communityCommunication',
+    name: 'CommunityCommunication',
+    component: CommunityCommunication,
+    meta: {
+      TabbarShow: true
     }
   }
 ]

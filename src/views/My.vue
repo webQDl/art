@@ -3,17 +3,17 @@
     <div class="head">
       <div class="user">
         <div class="userImg">
-          <img style="height: 100%" src="../assets/images/default.png" alt="">
+          <img style="height: 100%" src="../assets/images/my/default.png" alt="">
         </div>
         <div class="userInfo">
           <div class="userName">手机用户2543</div>
           <div class="usergradeDiv">
-            <div class="usergradeImgDiv"><img class="usergradeImg" src="../assets/images/security.png" alt=""></div>
+            <div class="usergradeImgDiv"><img class="usergradeImg" src="../assets/images/my/security.png" alt=""></div>
             <div class="usergradeName">普通会员</div>
           </div>
         </div>
         <div class="right">
-          <img class="" src="../assets/images/set.png" alt="">
+          <img class="" src="../assets/images/my/set.png" alt="">
         </div>
       </div>
       <div class="nav">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="member kuai">
-        <img class="widthBig" src="../assets/images/member1.png" alt="">
+        <img class="widthBig" src="../assets/images/my/member1.png" alt="">
       </div>
     </div>
     <div class="order">
@@ -46,61 +46,61 @@
       <div class="orederContent">
         <div class="nav">
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitPayment.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitPayment.png" alt=""></div>
             <div class="nav_title">待付款</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\shopCart.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\shopCart.png" alt=""></div>
             <div class="nav_title">代发货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitGoods.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitGoods.png" alt=""></div>
             <div class="nav_title">待收货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitEvaluate.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitEvaluate.png" alt=""></div>
             <div class="nav_title">待评价</div>
           </div>
       </div>
       </div>
     </div>
     <div class="gg">
-      <img class="widthBig" src="../assets/images/member1.png" alt="">
+      <img class="widthBig" src="../assets/images/my/member1.png" alt="">
     </div>
     <div class="modular">
       <div class="nav">
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitPayment.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitPayment.png" alt=""></div>
             <div class="nav_title">待付款</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\shopCart.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\shopCart.png" alt=""></div>
             <div class="nav_title">代发货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitGoods.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitGoods.png" alt=""></div>
             <div class="nav_title">待收货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitEvaluate.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitEvaluate.png" alt=""></div>
             <div class="nav_title">待评价</div>
           </div>
       </div>
       <div class="nav">
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitPayment.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitPayment.png" alt=""></div>
             <div class="nav_title">待付款</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\shopCart.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\shopCart.png" alt=""></div>
             <div class="nav_title">代发货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitGoods.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitGoods.png" alt=""></div>
             <div class="nav_title">待收货</div>
           </div>
           <div class="nav_item">
-            <div class="nav_num"><img src="..\assets\images\waitEvaluate.png" alt=""></div>
+            <div class="nav_num"><img src="..\assets\images\my\waitEvaluate.png" alt=""></div>
             <div class="nav_title">待评价</div>
           </div>
       </div>
@@ -125,6 +125,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  .my{
+    background-color: #F5F6F9;
+  }
+  .gg{
+    margin: 2% 0;
+  }
   .head,.order,.modular{
     background-color: #ffffff;
   }

@@ -2,13 +2,12 @@
   <div class="ThirdLogin">
     <van-divider :style="{ color: '#666666', borderColor: '#DCDCDC' }">其它登录方式</van-divider>
     <div class="loginIcon">
-      <div><img src="../assets/images/qq.png" alt=""></div>
-      <div><img src="../assets/images/weixin.png" alt=""></div>
-      <div><img src="../assets/images/weibo.png" alt=""></div>
+      <div><img src="../assets/images/login/qq.png" alt=""></div>
+      <div><img src="../assets/images/login/weixin.png" alt=""></div>
+      <div><img src="../assets/images/login/weibo.png" alt=""></div>
     </div>
   </div>
 </template>
-
 <script>
 import Vue from 'vue'
 import { Divider } from 'vant'

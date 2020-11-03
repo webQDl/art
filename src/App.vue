@@ -37,8 +37,7 @@ export default {
   color: #2c3e50;
 }
 .page{
-  margin: 10px;
-  height: 1000px;
+  margin: 5px 10px;
   overflow-y: auto;
   font-size: 13px;
 }
