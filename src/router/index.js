@@ -8,6 +8,7 @@ import ForgetPwd from '../views/ForgetPwd.vue'
 import News from '../views/News.vue'
 import Community from '../views/Community.vue'
 import CommunityCommunication from '../views/CommunityCommunication.vue'
+import CommunityCommunicationDetail from '../views/CommunityCommunicationDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -72,6 +73,14 @@ const routes = [
     path: '/communityCommunication',
     name: 'CommunityCommunication',
     component: CommunityCommunication,
+    meta: {
+      TabbarShow: true
+    }
+  },
+  {
+    path: '/communityCommunicationDetail',
+    name: 'CommunityCommunicationDetail',
+    component: CommunityCommunicationDetail,
     meta: {
       TabbarShow: true
     }

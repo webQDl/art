@@ -37,8 +37,8 @@ export default {
   color: #2c3e50;
 }
 .page{
-  margin: 5px 10px;
+  margin: 10px 20px;
   overflow-y: auto;
-  font-size: 13px;
+  font-size: 14px; //原 13px
 }
 </style>

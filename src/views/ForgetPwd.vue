@@ -17,7 +17,7 @@
         <div>
           <div  >
             <input v-model="password" type="password"  style="width:70%;margin-bottom:20px;" placeholder="请输入验证码" />
-            <button class="verificationCode">获取验证码</button>
+            <button class="verificationCode" @click="onCheck()">获取验证码</button>
           </div>
         </div>
         <div><input v-model="newPwd" placeholder="请输入6-10位新密码" style="width:100%;margin-bottom:20px;" /></div>
@@ -31,7 +31,11 @@
 <script>
 import Vue from 'vue'
 import { NavBar, Toast, Form, Button } from 'vant'
+import axios from 'axios'
+import md5 from 'js-md5'
 
+Vue.prototype.$md5 = md5
+Vue.prototype.$axios = axios
 Vue.use(Form)
 Vue.use(NavBar)
 Vue.use(Toast)
@@ -53,6 +57,17 @@ export default {
   computed: {
   },
   methods: {
+    onCheck () {
+      const url = 'api/system/api/user/sms?mobile=' + this.username + '&type=2'
+      axios({
+        method: 'get',
+        url: url
+      }).then((res) => {
+        console.log(res)
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
     onClickLeft () {
       this.$router.go(-1)
     },
@@ -60,7 +75,26 @@ export default {
       Toast('按钮')
     },
     onSubmit (values) {
-      Toast.success('成功文案')
+      axios({
+        method: 'put',
+        url: 'api/system/api/user/reset',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          mobile: this.username,
+          code: this.password,
+          newPwd: md5(this.newPwd),
+          confirmPwd: md5(this.newPwdAgain)
+        }
+      }).then((res) => {
+        console.log(1)
+        console.log(res.data)
+        Toast.success('成功文案')
+      }).catch(function (error) {
+        console.log(2)
+        console.log(error)
+      })
     },
     onLogin () {
       this.$router.push('/phoneLogin')

@@ -32,7 +32,7 @@
           <div style="color: #999999;" @click="findMore()">发现更多 <van-icon name="arrow" /></div>
         </div>
         <div class="myCommunication_content">
-          <div v-for="(item,key) in pic" :key="key" class="myCommunicationItem">
+          <div v-for="(item,key) in pic" :key="key" class="myCommunicationItem" @click="onclickTo()">
             <div><img class="img" :src="item.img" ></div>
             <div class="name">{{item.name}}</div>
           </div>
@@ -42,7 +42,7 @@
     <div class="communityRelease">
       <div class="communityReleaseItem">
         <div v-show="!communityTitle" style="color: #111111; font-weight:700 ;font-size: 18px">今日推荐</div>
-        <div class="releaseTop">
+        <!-- <div class="releaseTop">
           <div class="releaseUser">
             <div><img src="../assets/images/community/default.png" alt=""></div>
             <div class="releaseUsername">Name</div>
@@ -56,9 +56,9 @@
           <div><img src="../assets/images/community/default.png" alt="" width="100%"></div>
           <div><img src="../assets/images/community/default.png" alt="" width="100%"></div>
           <div><img src="../assets/images/community/default.png" alt="" width="100%"></div>
-        </div>
-        <div class="shareFabulous">
-          <ShareFabulous></ShareFabulous>
+        </div> -->
+        <div class="release">
+          <Release :releaseMsg="this.releaseMsg"></Release>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@
 
 <script>
 // @ is an alias to /src
-import ShareFabulous from '@/components/ShareFabulous.vue'
+import Release from '@/components/Release.vue'
 import Vue from 'vue'
 import { Swipe, SwipeItem, Lazyload, Icon } from 'vant'
 
@@ -78,7 +78,7 @@ Vue.use(Swipe, SwipeItem)
 export default {
   name: 'Community',
   components: {
-    ShareFabulous
+    Release
   },
   data () {
     return {
@@ -124,21 +124,15 @@ export default {
       ]
     }
   },
-  mounted () {
-    this.lineNum = parseInt(this.releaseMsg.length / 25) + 1
-    this.lineNum > 4 ? (this.lineFlag = true) : (this.lineFlag = false)
-    console.log(this.lineFlag)
-  },
   methods: {
-    moreInfo () {
-      this.lineFlag = !this.lineFlag
-      console.log(1)
-    },
     changeTitle () {
       this.communityTitle = !this.communityTitle
     },
     findMore () {
-      this.$router.push('/communityMy')
+      this.$router.push('/CommunityCommunication')
+    },
+    onClick () {
+      this.$router.push('/')
     }
   }
 }
@@ -186,27 +180,6 @@ export default {
   .cardTypeItem:first-of-type{
     margin-right: 6%;
   }
-  .releaseTop{
-    margin: 10px 0;
-    position: relative;
-  }
-  .right{
-    position: absolute;
-    right: 0;
-    top: 30%;
-  }
-  .releaseUser{
-    display: inline-flex;
-    align-items: center;
-  }
-  .releaseUsername{
-    font-weight: 700;
-    margin-left: 20px;
-    font-size: 15px;
-  }
-  .releaseContent{
-    line-height: 20px;
-  }
   .row4{
     height: 80px;
     overflow-y: hidden;
@@ -215,22 +188,8 @@ export default {
     box-orient: vertical;
     // white-space: nowrap
   }
-  .communityImg{
-    margin: 20px 0;
-  }
-  .communityImg>div{
-    width: 30%;
-    display: inline-block;
-  }
-  .communityImg>div:not(:last-of-type){
-    margin-right: 5%;
-  }
   .communityRelease{
     background-color: #FFFFFF;
-  }
-  .communityReleaseItem{
-    border-bottom: 1px solid #DCDCDC;
-    padding: 20px 0;
   }
   .my-swipe .van-swipe-item {
     color: #fff;
@@ -282,7 +241,7 @@ export default {
     line-height: 70px;
     opacity: 0.6;
   }
-  .van-icon{
+  .releaseBtn .van-icon{
     font-size: 30px;
   }
 </style>

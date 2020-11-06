@@ -1,5 +1,5 @@
 <template>
-  <div class="community_my">
+  <div class="communityCommunication">
     <div>
       <van-nav-bar title="小白交流群" left-text="" right-text="按钮" left-arrow @click-left="onClickLeft" @click-right="onClickRight"/>
     </div>
@@ -40,7 +40,7 @@ Vue.use(Tab)
 Vue.use(Toast)
 Vue.use(Button)
 export default {
-  name: 'Community_my',
+  name: 'CommunityCommunicatione',
   data () {
     return {
       myCircleList: [
@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     onClickLeft () {
-      console.log('返回')
+      this.$router.go(-1)
     },
     onClickRight () {
       console.log('按钮')
